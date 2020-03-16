@@ -1,0 +1,52 @@
+h1 {
+  padding: 20px;
+}
+
+.content {
+    display: flex;              /* フレックスボックスにする */
+}
+
+.todo {
+  background: rgb(209, 209, 209);
+  text-align: center;
+  height: 300px;
+  width: 30%;
+  margin: 10px;
+
+}
+.working {
+  background: rgb(209, 209, 209);
+  text-align: center;
+  height: 300px;
+  width: 30%;
+  margin: 10px;
+}
+.done {
+  background: rgb(209, 209, 209);
+  text-align: center;
+  height: 300px;
+  width: 30%;
+  margin: 10px;
+}
+
+.todo #header {
+  background-color: rgb(255, 145, 145);
+
+}
+
+.done #header {
+  background-color: rgb(128, 255, 181);
+
+}
+
+.working #header {
+  background-color: rgb(158, 186, 255);
+
+}
+
+.todo #item {
+  background-color: white;
+  margin: 5px;
+  height: 50px;
+  width: auto;
+}
