@@ -7,12 +7,15 @@ const task_todo = new Vue({
   },
   methods: {  //methodsオプションをまるっと追加
     addTodo: function(newTitle){
-      this.items.push({
-        title: newTitle,
-        isChecked: false
-      });
-      this.newItemTitle = '';
-      this.saveTodo();
+      if(newTitle != ''){
+        this.items.push({
+          title: newTitle,
+          isChecked: false
+        });
+        this.newItemTitle = '';
+        this.saveTodo();
+      }
+
     },
     deleteTodo: function(){
       this.items = this.items.filter(function (item) {
@@ -59,12 +62,14 @@ const task_working = new Vue({
   },
   methods: {  //methodsオプションをまるっと追加
     addTodo: function(newTitle){
-      this.items.push({
-        title: newTitle,
-        isChecked: false
-      });
-      this.newItemTitle = '';
-      this.saveTodo();
+      if(newTitle != ''){
+        this.items.push({
+          title: newTitle,
+          isChecked: false
+        });
+        this.newItemTitle = '';
+        this.saveTodo();
+      }
     },
     deleteTodo: function(){
       this.items = this.items.filter(function (item) {
