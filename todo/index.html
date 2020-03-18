@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Title</title>
-  <link rel="stylesheet" href="./dist/style.css" />
+  <link rel="stylesheet" href="./dist/style_todo.css" />
+  <link rel="stylesheet" href="./dist/style_weather.css" />
 
 </head>
 
@@ -68,8 +69,27 @@
   </div>
 
 
-<div class="weather_app"></div>
-<div class="news_app"></div>
+<div class="weather_app">
+<h2>天気</h2>
+<div id="weather_box">
+<div id="weather_info">
+      <p class="weather_city">都市：{{ city }}</p>
+      <p class="weather_condition">天気：{{ condition.main }}</p>
+      <p class="weather_temp">現在気温：{{ temp | roundUp }}&deg;C</p>
+      <p class="weather_temp">最低：{{ temp_min | roundUp }}&deg;C</p>
+      <p class="weather_temp">最高：{{ temp_max | roundUp }}&deg;C</p>
+      <p class="weather_temp">湿度：{{ humidity}}％</p>
+</div>
+      <p v-if="condition.main == 'Rain'"><img src="img/rainy.jpg" alt="Rainy"></p>
+      <p v-else-if="condition.main == 'Clouds'"><img src="img/cloudy.jpg" alt="Cloudy"></p>
+      <p v-else-if="condition.main == 'Clear'"><img src="img/sunny.jpg" alt="Sunny"></p>
+      <!-- <p v-else><img src="..img/sunset.jpg" alt="Sunset"></p> -->
+    </div>
+
+</div>
+<div class="news_app">
+  <h2>ニュース</h2>
+</div>
 
 
 
@@ -80,7 +100,9 @@
 
 
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <script src="./dist/script.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./dist/script_todo.js"></script>
+  <script src="./dist/script_weather.js"></script>
 
 
 
